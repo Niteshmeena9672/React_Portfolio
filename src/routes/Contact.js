@@ -1,9 +1,14 @@
 import React from 'react'
 import "../index.css"
+import Navbar from '../components/Navbar'
+import HeroImg from '../components/HeroImg'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <Navbar/>
+      <HeroImg heading = "CONTACT" text="Let's Connect"/>
+    </div>
   )
 }
 

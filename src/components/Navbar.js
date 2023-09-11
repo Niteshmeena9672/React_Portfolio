@@ -2,21 +2,30 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "../index.css";
-import { FaBars ,FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import React from "react";
 import { useState } from "react";
 
-
 const Navbar = () => {
-    const [click,setClick] = useState(false);
-    const handleClick = () => setClick(!click);
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const [color, setColor] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 100) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
+
   return (
     // Link different pages
-    <div className="header">
+    <div className={color ? "header header-bg" : "header"}>
       <Link to="/">
         <h1 className="text-3xl font-bold"> Portfolio</h1>
       </Link>
-      <ul className={click ? "nav-menu active" :"nav-menu"}>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -31,11 +40,14 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="hambuger"  onClick={handleClick}>
-        {click ?( <FaTimes size={20} style={{color:"#fff"}} onClick={handleClick}/>) :(<FaBars size={20} style={{color:"#fff"}}/>)
-        }
-        </div>
-        
+      <div className="hambuger" onClick={handleClick}>
+        {click ? (
+          <FaTimes size={20} style={{ color: "#fff" }} onClick={handleClick} />
+        ) : (
+          <FaBars size={20} style={{ color: "#fff" }} />
+        )}
+      </div>
+
       {/* <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
         Button
       </button>

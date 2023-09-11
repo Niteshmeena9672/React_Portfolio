@@ -1,0 +1,50 @@
+.hero-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.Hero_BG_Img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+    position: absolute;
+   
+    z-index: -1;
+}
+
+.heading{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.hero-img h1{
+    font-size: 2.4rem;
+}
+.hero-img p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .hero-img h1{
+        font-size: 2rem;
+    }
+    .hero-img p{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-img h1{
+        font-size: 1.8rem;
+    }
+    .hero-img p{
+        font-size: 1rem;
+    }
+}
